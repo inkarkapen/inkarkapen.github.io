@@ -1,6 +1,3 @@
-# Inkar Kapen
-
-
 I work at Allen Institute, where I apply machine learning models to segment cells in brain tissue images, classify cell types,
 and predict anatomical brain regions from sequencing data.
 
