@@ -80,7 +80,7 @@
 
 			
 		<table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-			
+			<!-- Start of MapMySections -->
 			<tr onmouseout="MMS_stop()" onmouseover="MMS_start()">
 			  <td style="padding:16px;width:20%;vertical-align:middle">
 			    <div class="one">
@@ -120,12 +120,47 @@
 					their utility and interpretability.
 				</p>
 				<p>
-					For this challenge, I trained a ResNet–based 3D convolutional neural network on paired 3D fluorescence microscopy 
+					For this challenge, <strong>I trained</strong> a ResNet–based 3D convolutional neural network on paired 3D fluorescence microscopy 
 					images and spatial transcriptomic cell-type labels to predict cell-type identity directly from imaging data. 
 			    </p>
 			  </td>
 			</tr>
-
+			
+			<!-- Start of Hackathon MRI label transfer -->
+			<tr onmouseout="MRI_stop()" onmouseover="MRI_start()">
+			  <td style="padding:16px;width:20%;vertical-align:middle">
+			    <div class="one">
+			      <div class="two" id='MRI_image'>
+			        <img src='images/MRI_after.jpg' width=100%>
+			      </div>
+				    <img src='images/MRI_before.jpg' width=100%>
+			    </div>
+			    <script type="text/javascript">
+			      function MRI_start() {
+			        document.getElementById('MRI_image').style.opacity = "1";
+			      }
+			
+			      function MRI_stop() {
+			        document.getElementById('MRI_image').style.opacity = "0";
+			      }
+			      MRI_stop()
+			    </script>
+			  </td>
+			  <td style="padding:8px;width:80%;vertical-align:middle">
+				<span class="papertitle">Brain Image Segmentation (Hackathon Winner) </span>
+				<a href="https://alleninstitute-mri-image-label-transfer-my-app-6mlgh3.streamlit.app">[webtool]</a>
+				<a href="https://github.com/inkarkapen/brain_image_segmentation_and_label_transfer">[code]</a>
+			    <br>
+				<strong>Inkar Kapen</strong>.
+			    <p></p>
+			    <p>
+					Brain annotation is a time-intensive task that requires manual pixel-by-pixel labeling of structures defined by the human brain ontology. 
+					This project’s goal was to develop and deploy a model that transferred labeled sections of the human brain atlas images to unlabeled neighbors. ​ 
+					This represents an important first step in label transfer for anatomical atlas images and will be useful for future atlas segmentation efforts. ​
+				</p>
+			  </td>
+			</tr>
+			
 		</tbody></table>	
 
 		
