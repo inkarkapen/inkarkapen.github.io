@@ -90,7 +90,7 @@
 			               { type:'image', src:'images/MMS_after.jpg', caption:'After' }
 			             ])">
 			      </div>
-				  <video width="100%" muted autoplay loop playsinline style="cursor:pointer;"
+				  <video id="MMS_brefore" width="100%" muted autoplay loop playsinline style="cursor:pointer;"
 						 onclick="openGalleryModal([
 						   { type:'video', src:'images/MMS_before.mp4', caption:'Before' },
 						   { type:'image', src:'images/MMS_after.jpg', caption:'After' }
@@ -101,10 +101,12 @@
 			    <script type="text/javascript">
 			      function MMS_start() {
 			        document.getElementById('MMS_image').style.opacity = "1";
+					document.getElementById('MMS_brefore').style.opacity = "0";
 			      }
 			
 			      function MMS_stop() {
 			        document.getElementById('MMS_image').style.opacity = "0";
+					document.getElementById('MMS_brefore').style.opacity = "1";
 			      }
 			      MMS_stop()
 			    </script>
