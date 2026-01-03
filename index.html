@@ -84,16 +84,22 @@
 			  <td style="padding:16px;width:20%;vertical-align:middle">
 			    <div class="one">
 			      <div class="two" id='MMS_image'>
-					  <a href="https://mapmysections-bappbnxmnxoresuethu8hcm.streamlit.app">
-			        	<img src='images/MMS_after.jpg' width=100%>
-					  </a>
+					  <img src="images/MMS_after.jpg"
+			             width="100%"
+			             style="cursor:pointer;"
+			             onclick="openGalleryModal([
+			               { type:'video', src:'images/MMS_before.mp4', caption:'Before' },
+			               { type:'image', src:'images/MMS_after.jpg', caption:'After' }
+			             ])">
 			      </div>
-					<a href="https://mapmysections-bappbnxmnxoresuethu8hcm.streamlit.app">
-				      <video  width=100% muted autoplay loop>
-				          <source src="images/MMS_before.mp4" type="video/mp4">
-				          Your browser does not support the video tag.
-			          </video>
-					</a>
+				  <video width="100%" muted autoplay loop playsinline
+						 style="cursor:pointer;"
+						 onclick="openGalleryModal([
+						   { type:'video', src:'images/MMS_before.mp4', caption:'Before' },
+						   { type:'image', src:'images/MMS_after.jpg', caption:'After' }
+						 ])">
+					<source src="images/MMS_before.mp4" type="video/mp4">
+				  </video>
 			    </div>
 			    <script type="text/javascript">
 			      function MMS_start() {
@@ -130,12 +136,16 @@
 			    <div class="one">
 			      <div class="two" id='Hackathon_image'>
 			        <img src="images/Hackathon_after.jpg" width="100%" style="cursor:pointer;"
-				     onclick="openGalleryModal(['images/Hackathon_before.jpg','images/Hackathon_after.jpg'],
-				                               ['Before','After'])">
+						onclick="openGalleryModal([
+			               { type:'image', src:'images/Hackathon_before.jpg', caption:'Before' },
+			               { type:'image', src:'images/Hackathon_after.jpg', caption:'After' }
+			             ])>
 			      </div>
 					<img src="images/Hackathon_before.jpg" width="100%" style="cursor:pointer;"
-					     onclick="openGalleryModal(['images/Hackathon_before.jpg','images/Hackathon_after.jpg'],
-					                               ['Before','After'])">
+					     onclick="openGalleryModal([
+			               { type:'image', src:'images/Hackathon_before.jpg', caption:'Before' },
+			               { type:'image', src:'images/Hackathon_after.jpg', caption:'After' }
+			             ])">
 			    </div>
 			    <script type="text/javascript">
 			      function Hackathon_start() {
@@ -491,27 +501,35 @@
 	</div>
 
 	<script>
-		function openGalleryModal(imageSrcList, captions) {
+		function openGalleryModal(items) {
 		  const modal = document.getElementById("galleryModal");
 		  const content = document.getElementById("galleryContent");
-		  content.innerHTML = ""; // clear previous content
+		  content.innerHTML = "";
 		
-		  imageSrcList.forEach((src, i) => {
-		    if (captions && captions[i]) {
+		  items.forEach((item, i) => {
+		    if (item.caption) {
 		      const cap = document.createElement("div");
 		      cap.style.color = "white";
 		      cap.style.margin = (i === 0) ? "0 0 8px 0" : "24px 0 8px 0";
 		      cap.style.fontSize = "14px";
-		      cap.textContent = captions[i];
+		      cap.textContent = item.caption;
 		      content.appendChild(cap);
 		    }
 		
-		    const img = document.createElement("img");
-		    img.src = src;
-		    img.style.width = "100%";
-		    img.style.marginBottom = "8px";
-		    img.style.border = "1px solid rgba(255,255,255,0.15)";
-		    content.appendChild(img);
+		    let el;
+		    if (item.type === "video") {
+		      el = document.createElement("video");
+		      el.src = item.src;
+		      el.controls = true;
+		      el.style.width = "100%";
+		    } else {
+		      el = document.createElement("img");
+		      el.src = item.src;
+		      el.style.width = "100%";
+		    }
+		
+		    el.style.marginBottom = "8px";
+		    content.appendChild(el);
 		  });
 		
 		  modal.style.display = "block";
