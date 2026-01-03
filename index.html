@@ -140,7 +140,7 @@
 			               { type:'image', src:'images/Hackathon_after.jpg', caption:'After' }
 			             ])">
 			      </div>
-					<img src="images/Hackathon_before.jpg" width="100%" style="cursor:pointer;"
+					<img id="Hackthon_before" src="images/Hackathon_before.jpg" width="100%" style="cursor:pointer;"
 					     onclick="openGalleryModal([
 			               { type:'image', src:'images/Hackathon_before.jpg', caption:'Before' },
 			               { type:'image', src:'images/Hackathon_after.jpg', caption:'After' }
@@ -149,10 +149,12 @@
 			    <script type="text/javascript">
 			      function Hackathon_start() {
 			        document.getElementById('Hackathon_image').style.opacity = "1";
+					document.getElementById('Hackthon_before').style.opacity = "0";
 			      }
 			
 			      function Hackathon_stop() {
 			        document.getElementById('Hackathon_image').style.opacity = "0";
+					document.getElementById('Hackthon_before').style.opacity = "1";
 			      }
 			      Hackathon_stop()
 			    </script>
@@ -241,7 +243,7 @@
 			               { type:'image', src:'images/BG_atlas_after.jpg', caption:'After' }
 			             ])">
 				  </div>
-				  <img src="images/BG_atlas_before.jpg" width="100%" style="cursor:pointer;"
+				  <img id="BG_atlas_before" src="images/BG_atlas_before.jpg" width="100%" style="cursor:pointer;"
 					     onclick="openGalleryModal([
 			               { type:'image', src:'images/BG_atlas_before.jpg', caption:'Before' },
 			               { type:'image', src:'images/BG_atlas_after.jpg', caption:'After' }
@@ -250,10 +252,12 @@
 				<script type="text/javascript">
 				  function BG_atlas_start() {
 					document.getElementById('BG_atlas_image').style.opacity = "1";
+					document.getElementById('BG_atlas_before').style.opacity = "0";
 				  }
 			
 				  function BG_atlas_stop() {
 					document.getElementById('BG_atlas_image').style.opacity = "0";
+					document.getElementById('BG_atlas_before').style.opacity = "1";
 				  }
 				  BG_atlas_stop()
 				</script>
@@ -288,7 +292,7 @@
 			               { type:'image', src:'images/SpC_after.jpg', caption:'After' }
 			             ])">
 				  </div>
-				  <img src="images/SpC_before.jpg" width="100%" style="cursor:pointer;"
+				  <img id="SpC_before" src="images/SpC_before.jpg" width="100%" style="cursor:pointer;"
 					     onclick="openGalleryModal([
 			               { type:'image', src:'images/SpC_before.jpg', caption:'Before' },
 			               { type:'image', src:'images/SpC_after.jpg', caption:'After' }
@@ -297,10 +301,12 @@
 				<script type="text/javascript">
 				  function SpC_start() {
 					document.getElementById('SpC_image').style.opacity = "1";
+					document.getElementById('SpC_before').style.opacity = "0";
 				  }
 			
 				  function SpC_stop() {
 					document.getElementById('SpC_image').style.opacity = "0";
+					document.getElementById('SpC_before').style.opacity = "1";
 				  }
 				  SpC_stop()
 				</script>
@@ -335,7 +341,7 @@
 			               { type:'image', src:'images/BG_astro_after.jpg', caption:'After' }
 			             ])">
 				  </div>
-				  <img src="images/BG_astro_before.jpg" width="100%" style="cursor:pointer;"
+				  <img id="BG_astro_before" src="images/BG_astro_before.jpg" width="100%" style="cursor:pointer;"
 					     onclick="openGalleryModal([
 			               { type:'image', src:'images/BG_astro_before.jpg', caption:'Before' },
 			               { type:'image', src:'images/BG_astro_after.jpg', caption:'After' }
@@ -344,10 +350,12 @@
 				<script type="text/javascript">
 				  function BG_astro_start() {
 					document.getElementById('BG_astro_image').style.opacity = "1";
+					document.getElementById('BG_astro_before').style.opacity = "0";
 				  }
 			
 				  function BG_astro_stop() {
 					document.getElementById('BG_astro_image').style.opacity = "0";
+					document.getElementById('BG_astro_before').style.opacity = "1";
 				  }
 				  BG_astro_stop()
 				</script>
@@ -381,7 +389,7 @@
 			               { type:'image', src:'images/SpC_spatial_after.jpg', caption:'After' }
 			             ])">
 				  </div>
-				  <img src="images/SpC_spatial_before.jpg" width="100%" style="cursor:pointer;"
+				  <img id="SpC_spatial_before" src="images/SpC_spatial_before.jpg" width="100%" style="cursor:pointer;"
 					     onclick="openGalleryModal([
 			               { type:'image', src:'images/SpC_spatial_before.jpg', caption:'Before' },
 			               { type:'image', src:'images/SpC_spatial_after.jpg', caption:'After' }
@@ -390,10 +398,12 @@
 				<script type="text/javascript">
 				  function SpC_spatial_start() {
 					document.getElementById('SpC_spatial_image').style.opacity = "1";
+					document.getElementById('SpC_spatial_before').style.opacity = "0";
 				  }
 			
 				  function SpC_spatial_stop() {
 					document.getElementById('SpC_spatial_image').style.opacity = "0";
+					document.getElementById('SpC_spatial_before').style.opacity = "1";
 				  }
 				  SpC_spatial_stop()
 				</script>
